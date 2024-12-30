@@ -35,7 +35,7 @@ def cls():
 
 def main():
     init(autoreset=True); cls()
-    print(fores["tag"] + tag)
+    print("\n" + fores["tag"] + tag)
 
     cache = jutils.get_cache()
     config = jutils.get_config()
