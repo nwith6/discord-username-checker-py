@@ -1,3 +1,4 @@
+import os
 import time
 import modules.json_utils as jutils
 import modules.username_utils as uutils
@@ -25,9 +26,15 @@ tag = """ █     █░ ██▓ ██ ▄█▀ ██▓    ██▓     �
 
 
 # Functions #
-def main():
-    init(autoreset=True)
+def cls():
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
+    
 
+def main():
+    init(autoreset=True); cls()
     print(fores["tag"] + tag)
 
     cache = jutils.get_cache()
