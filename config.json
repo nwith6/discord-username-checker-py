@@ -1,0 +1,12 @@
+{
+    "mode": "lds",
+    "delay": 20,
+    "end_on_available": false,
+    "continue_if_cached": true,
+
+    "username": null,
+    "length": 4,
+    "letters": "abcdefghijklmnopqrstuvwxyz",
+    "digits": "0123456789",
+    "specials": "_."
+}
