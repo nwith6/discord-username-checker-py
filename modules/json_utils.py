@@ -3,15 +3,10 @@ import json
 
 # Variables
 default_config = {
-    "mode": "lds",
+    "username_regex": "[0-9a-z_.]{15}",
     "delay": 20,
-    "end_on_available": False,
-
-    "username": None,
-    "length": 10,
-    "letters": "abcdefghijklmnopqrstuvwxyz",
-    "digits": "0123456789",
-    "specials": "_."
+    "pause_execution_if_available": False,
+    "proccess_cached_usernames": True
 }
 
 
@@ -34,9 +29,7 @@ def update_cache(type: str, username: str) -> dict | bool:
 
         file.seek(0); json.dump(data, file, indent=4)
 
-    if updated_data:
-        return updated_data
-    return False
+    return updated_data
 
 
 def get_config() -> dict:

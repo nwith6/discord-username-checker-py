@@ -1,12 +1,6 @@
 {
-    "mode": "lds",
+    "username_regex": "[0-9a-z_.]{15}",
     "delay": 20,
-    "end_on_available": false,
-    "continue_if_cached": true,
-
-    "username": null,
-    "length": 4,
-    "letters": "abcdefghijklmnopqrstuvwxyz",
-    "digits": "0123456789",
-    "specials": "_."
+    "pause_execution_if_available": false,
+    "proccess_cached_usernames": true
 }
