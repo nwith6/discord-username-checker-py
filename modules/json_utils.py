@@ -21,11 +21,33 @@ def get_cache() -> dict:
             return {"available": [], "unavailable": []}
 
 
-def update_cache(type: str, username: str) -> dict | bool:
+# def update_cache(type: str, username: str) -> dict | bool:
+#     updated_data = None
+#     with open("username_cache.json", "r+") as file:
+#         data = json.load(file)
+#         data[type].append(username); updated_data = data
+
+#         file.seek(0); json.dump(data, file, indent=4)
+
+#     return updated_data
+
+
+def cache_append(type: str, username: str) -> dict | bool:
     updated_data = None
     with open("username_cache.json", "r+") as file:
         data = json.load(file)
         data[type].append(username); updated_data = data
+
+        file.seek(0); json.dump(data, file, indent=4)
+
+    return updated_data
+
+
+def cache_remove(type: str, username: str) -> dict | bool:
+    updated_data = None
+    with open("username_cache.json", "r+") as file:
+        data = json.load(file)
+        data[type].remove(username); updated_data = data
 
         file.seek(0); json.dump(data, file, indent=4)
 
