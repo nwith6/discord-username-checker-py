@@ -55,8 +55,13 @@ def main():
         response = rutils.discord_username_availability(username)
 
         type = response["available"] and "available" or "unavailable"
+        type_opposite = type == "available" and "unavailable" or "available"
+
+        if username in cache[type_opposite]:
+            cache[type_opposite].remove(username); jutils.cache_remove(type_opposite, username)
+
         if username not in cache[type]:
-            cache[type].append(username); jutils.update_cache(type, username)
+            cache[type].append(username); jutils.cache_append(type, username)
 
         t = fores["time"] + f"[{time.strftime('%d/%m/%Y %H:%M:%S')}] "
         print(t + f"{fores[type]}{username} {response['message']}")
